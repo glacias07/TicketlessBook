@@ -8,12 +8,18 @@ import TestingScreen from '../components/TestingScreen';
 import SignIn from '../components/SignIn';
 import TourDetails from '../components/TourDetails';
 import AttractionListItem from '../components/common/AttractionListItem';
+import TicketSelectionScreen from '../components/TicketSelectionScreen';
 const Stack = createNativeStackNavigator();
 
 function MainAppRoutes() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="TicketSelection"
+          component={TicketSelectionScreen}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name="Testing" component={TestingScreen} />
         <Stack.Screen
           name="TourDetails"
