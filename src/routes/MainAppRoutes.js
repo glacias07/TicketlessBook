@@ -6,6 +6,7 @@ import BookingHistory from '../components/BookingHistory';
 import QrScan from '../components/QrScan';
 import TestingScreen from '../components/TestingScreen';
 import SignIn from '../components/SignIn';
+import TourDetails from '../components/TourDetails';
 const Stack = createNativeStackNavigator();
 
 function MainAppRoutes() {
@@ -13,6 +14,11 @@ function MainAppRoutes() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="TourDetails"
+          component={TourDetails}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name="TestingScreen" component={TestingScreen} />
         <Stack.Screen
           name="SignIn"
