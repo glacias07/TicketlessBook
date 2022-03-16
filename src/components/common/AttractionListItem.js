@@ -10,9 +10,9 @@ const AttractionListItem = props => {
     saveCircle,
     priceContainerAndRatingStyle,
   } = styles;
-  const {cardContainer, image, heading, description, price,rating} = props;
+  const {cardContainer, image, heading, description, price, rating} = props;
   return (
-    <View style={container}>
+    <TouchableOpacity style={container}>
       <TouchableOpacity style={saveCircle}>
         <Image
           style={{
@@ -23,9 +23,9 @@ const AttractionListItem = props => {
           source={require('../../assets/Icons/saved.png')}
         />
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Image style={imageStyle} source={image} />
-      </TouchableOpacity>
+
+      <Image style={imageStyle} source={image} />
+
       <View style={headingContainer}>
         <Label
           text={heading}
@@ -36,9 +36,7 @@ const AttractionListItem = props => {
         />
       </View>
       <Label
-        text={
-          description
-        }
+        text={description}
         textSize={16}
         textWeight={400}
         numberOfLines={1}
@@ -50,7 +48,12 @@ const AttractionListItem = props => {
             style={{width: 40, height: 40, marginLeft: 40, marginRight: 10}}
             source={require('../../assets/Icons/rupee.png')}
           />
-          <Label text={price} textSize={26} textWeight={500} textColor='black' />
+          <Label
+            text={price}
+            textSize={26}
+            textWeight={500}
+            textColor="black"
+          />
         </View>
         <View style={{flexDirection: 'row', marginRight: 65}}>
           <Image
@@ -60,7 +63,7 @@ const AttractionListItem = props => {
           <Label text={rating} textSize={18} textWeight={600} />
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop:10
+    marginTop: 10,
   },
 });
 
