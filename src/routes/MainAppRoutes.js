@@ -7,6 +7,7 @@ import QrScan from '../components/QrScan';
 import TestingScreen from '../components/TestingScreen';
 import SignIn from '../components/SignIn';
 import TourDetails from '../components/TourDetails';
+import AttractionListItem from '../components/common/AttractionListItem';
 const Stack = createNativeStackNavigator();
 
 function MainAppRoutes() {
@@ -25,6 +26,7 @@ function MainAppRoutes() {
           component={SignIn}
           options={{headerShown: false}}
         />
+        <Stack.Screen name="AttractionList" component={AttractionListItem}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
