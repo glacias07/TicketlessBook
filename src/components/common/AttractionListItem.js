@@ -10,9 +10,9 @@ const AttractionListItem = props => {
     saveCircle,
     priceContainerAndRatingStyle,
   } = styles;
-  const {cardContainer, image, heading, description, price, rating} = props;
+  const {cardContainer, image, heading, description, price, rating,cardOnPress} = props;
   return (
-    <TouchableOpacity style={container}>
+    <TouchableOpacity onPress={cardOnPress} style={container}>
       <TouchableOpacity style={saveCircle}>
         <Image
           style={{
@@ -55,9 +55,9 @@ const AttractionListItem = props => {
             textColor="black"
           />
         </View>
-        <View style={{flexDirection: 'row', marginRight: 65}}>
+        <View style={{flexDirection: 'row', marginRight: 65, justifyContent: 'center',alignItems: 'center'}}>
           <Image
-            style={{width: 25, height: 25, marginLeft: 40, marginRight: 10}}
+            style={{width: 20, height: 20, marginLeft: 40, marginRight: 10}}
             source={require('../../assets/Icons/star.png')}
           />
           <Label text={rating} textSize={18} textWeight={600} />
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: 'white',
     borderRadius: 20,
+    width: '90%'
     // alignItems: 'center',
   },
   headingContainer: {
