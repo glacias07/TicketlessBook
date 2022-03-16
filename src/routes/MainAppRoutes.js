@@ -9,6 +9,7 @@ import SignIn from '../components/SignIn';
 import TourDetails from '../components/TourDetails';
 import AttractionListItem from '../components/common/AttractionListItem';
 import TicketSelectionScreen from '../components/TicketSelectionScreen';
+import MaterialTopTab from './MaterialTopTab';
 const Stack = createNativeStackNavigator();
 
 function MainAppRoutes() {
@@ -16,11 +17,16 @@ function MainAppRoutes() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="MaterialTab"
+          component={MaterialTopTab}
+          options={{headerShown: false}}
+        />
+        {/* <Stack.Screen name="Testing" component={TestingScreen} /> */}
+        <Stack.Screen
           name="TicketSelection"
           component={TicketSelectionScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Testing" component={TestingScreen} />
         <Stack.Screen
           name="TourDetails"
           component={TourDetails}
@@ -31,9 +37,11 @@ function MainAppRoutes() {
           component={SignIn}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="AttractionList" component={AttractionListItem}/>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false}}/>
-        <Stack.Screen name='QrScan' component={QrScan} options={{headerShown:false}}/>
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
