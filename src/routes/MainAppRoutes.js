@@ -27,6 +27,7 @@ function MainAppRoutes() {
         />
         <Stack.Screen name="AttractionList" component={AttractionListItem}/>
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='QrScan' component={QrScan} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
